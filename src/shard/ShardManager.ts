@@ -15,7 +15,7 @@ class ShardManager {
     }
 
     spawn(id: number, count: number, url: string): void {
-        spawn("node", [join(__dirname, this.filePath)], {
+        spawn("node", [join(process.cwd(), this.filePath)], {
             stdio: "inherit",
             env: Object.assign({
                 DISCORD_TOKEN: this.token,
